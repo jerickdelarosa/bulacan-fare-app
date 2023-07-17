@@ -10,11 +10,16 @@
 
           <q-toolbar-title class="text-weight-bold">Fare Matrix</q-toolbar-title>
 
-          <q-btn flat round dense icon="whatshot" />
+        <!-- <q-btn flat round dense icon="home" /> -->
+        <q-btn flat round dense :loading="backToHome" @click="goToHome()" icon="home">
+          <template v-slot:loading>
+            <q-spinner-facebook />
+          </template>
+        </q-btn>
       </q-toolbar>
     </q-header>
 
-    <q-page-container class="bg-grey-1 ">
+    <q-page-container class="bg-grey-2 ">
       <router-view />
 
       <!-- place QPageScroller at end of page -->
@@ -36,5 +41,24 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const backToHome = ref(false)
+
+const router = useRouter()
+
+const goToHome = () => {
+  const currentPage = router.currentRoute.value.path
+  console.log(currentPage)
+  if (currentPage !== '/') {
+    backToHome.value = true
+
+    setTimeout(() => {
+      router.push('/')
+      backToHome.value = false
+    }, 1000)
+  }
+}
 
 </script>

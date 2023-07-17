@@ -1,6 +1,6 @@
 <template>
-  <q-page class="bg-grey-2 flex flex-start">
-    <div class="container-sm">
+  <q-page class="flex flex-start">
+    <div class="container-md">
       <div class="q-mt-xs" flat>
         <div class="q-mb-lg q-mt-xl">
           <div>
@@ -14,11 +14,10 @@
           <q-card class="q-my-lg" flat bordered>
             <q-item>
               <q-item-section avatar>
-                <q-avatar rounded size="md">
-                  <img src="/src/assets/bus-chrome.svg">
+                <q-avatar rounded size="lg">
+                  <img src="/src/assets/bus-green.svg">
                 </q-avatar>
               </q-item-section>
-
               <q-item-section>
                 <q-item-label class="text-h6">Bus fares</q-item-label>
               </q-item-section>
@@ -36,7 +35,14 @@
                       :columns="columns"
                       row-key="name"
                       separator="vertical"
-                    />
+                    >
+                    <template v-slot:top>
+                        <div class="q-table__title">
+                          Hagonoy <q-icon name="east" /> Cubao
+                        </div>
+                      </template>
+
+                    </q-table>
                   </div>
                   <div class="col col-12 col-md-5">
                     <q-table
@@ -46,7 +52,14 @@
                       :columns="columns"
                       row-key="name"
                       separator="vertical"
-                    />
+                    >
+                      <template v-slot:top>
+                        <div class="q-table__title">
+                          Cubao <q-icon name="east" /> Hagonoy
+                        </div>
+                      </template>
+
+                    </q-table>
                   </div>
                 </div>
             </q-card-section>
@@ -58,8 +71,8 @@
           <q-card class="q-my-lg" flat bordered>
             <q-item>
               <q-item-section avatar>
-                <q-avatar rounded size="md">
-                  <img src="/src/assets/jeep.svg">
+                <q-avatar rounded size="lg">
+                  <img src="/src/assets/jeep-yellow.svg">
                 </q-avatar>
               </q-item-section>
 
@@ -80,7 +93,14 @@
                       :columns="columns"
                       row-key="name"
                       separator="vertical"
-                    />
+                    >
+                      <template v-slot:top>
+                        <div class="q-table__title">
+                          Hagonoy <q-icon name="east" /> Malolos
+                        </div>
+                      </template>
+
+                    </q-table>
                   </div>
                   <div class="col col-12 col-md-5">
                     <q-table
@@ -90,7 +110,14 @@
                       :columns="columns"
                       row-key="name"
                       separator="vertical"
-                    />
+                    >
+                      <template v-slot:top>
+                        <div class="q-table__title">
+                          Malolos <q-icon name="east" /> Hagonoy
+                        </div>
+                      </template>
+
+                    </q-table>
                   </div>
                 </div>
             </q-card-section>

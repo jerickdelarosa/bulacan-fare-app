@@ -1,5 +1,5 @@
 <template>
-  <q-page class="bg-grey-2 flex flex-center">
+  <q-page class="flex flex-center">
     <div class="q-mt-xs" style="margin-top: -8rem" flat>
       <div class="q-my-lg justify-center">
         <q-item-section class="text-center">
@@ -19,8 +19,7 @@
           >
             {{ link.title }}
             <template v-slot:loading>
-              <q-spinner-hourglass class="on-left" />
-              Loading...
+              <q-spinner-facebook />
             </template>
           </q-btn>
         </div>
@@ -45,8 +44,6 @@ const loading = ref([
   false
 ])
 
-// const progress = ref(false)
-
 function simulateProgress (link, number) {
   // we set loading state
   loading.value[number] = true
@@ -56,6 +53,6 @@ function simulateProgress (link, number) {
     router.push(link)
     // we're done, we reset loading state
     loading.value[number] = false
-  }, 2000)
+  }, 1000)
 }
 </script>
