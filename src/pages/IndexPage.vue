@@ -4,7 +4,7 @@
       <div class="q-my-lg justify-center">
         <q-item-section class="text-center">
           <q-item-label class="text-h4 q-ma-xs">Welcome to Fare Matrix</q-item-label>
-          <q-item-label caption>where you can find location fares.</q-item-label>
+          <q-item-label caption>where you can find destination fares.</q-item-label>
         </q-item-section>
       </div>
       <div class="flex flex-wrap justify-center q-pa-1">
